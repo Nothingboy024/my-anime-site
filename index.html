@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniStream | Jikan API Explorer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Glassmorphism Nav -->
+    <nav class="fixed top-0 w-full z-50 glass px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center font-black text-white shadow-lg shadow-red-600/20">A</div>
+            <span class="text-xl font-black tracking-tighter text-white">ANISTREAM</span>
+        </div>
+        <div class="flex-1 max-w-xl mx-10 relative">
+            <input type="text" id="searchInput" placeholder="Search anime (e.g. Bleach)..." 
+                   class="w-full bg-zinc-900/80 border border-zinc-800 rounded-2xl px-6 py-3 text-sm text-white focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600 transition-all">
+            <div id="loader" class="hidden absolute right-4 top-3">
+                <div class="w-6 h-6 border-2 border-red-600 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="relative h-[50vh] flex items-center px-10 pt-20">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.alphacoders.com/134/1349372.png" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-[#050505]/80 to-transparent"></div>
+        </div>
+        <div class="relative z-10">
+            <h1 class="text-6xl font-black text-white mb-2">Explore Anime</h1>
+            <p class="text-zinc-400 text-lg max-w-md">Real-time data fetched directly from the Jikan API (MyAnimeList).</p>
+        </div>
+    </header>
+
+    <!-- Main Grid -->
+    <main class="px-10 py-12">
+        <h2 id="gridTitle" class="text-2xl font-bold mb-8 border-l-4 border-red-600 pl-4">Trending Now</h2>
+        <div id="animeGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+            <!-- JS will inject cards here -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
